@@ -8,7 +8,7 @@ export default async function Post({ post }: PostProps) {
         {post.tags.map((tag) => (
           <div
             key={tag}
-            className="rounded bg-gray-800 px-2 py-1 text-sm text-gray-300 hover:bg-gray-700 hover:shadow-md hover:shadow-gray-800"
+            className="rounded bg-gray-800 px-2 py-1 text-sm text-gray-300"
           >
             {tag}
           </div>
