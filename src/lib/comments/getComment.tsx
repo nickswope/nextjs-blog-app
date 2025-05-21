@@ -6,6 +6,8 @@ export default async function getComment(
   id: string | number,
 ): Promise<Comment> {
   const delay = Math.floor(Math.random() * 900) + 100;
+  // eslint-disable-next-line no-console
+  console.log("Fetching comment", id, "with delay", delay);
   const res = await fetch(
     `https://dummyjson.com/comments/${id}?delay=${delay}`,
     {
@@ -13,7 +15,9 @@ export default async function getComment(
     },
   );
   if (!res.ok) {
-    throw new Error("Failed to fetch data");
+    throw new Error(`Failed to fetch comment ${id}`);
   }
+  // eslint-disable-next-line no-console
+  console.log("Successfully fetched comment", id);
   return res.json();
 }
